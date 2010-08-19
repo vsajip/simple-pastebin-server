@@ -1,6 +1,16 @@
 #!/usr/bin/python
 #-*- coding: utf8 -*-
 
+#
+# Author: xumingming64398966
+# License: GPL
+# Version: 0.1
+#
+# How to run:
+# 1. mkdir data
+# 2. python pastebin-server.py
+#
+
 import BaseHTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
 
