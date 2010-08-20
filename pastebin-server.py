@@ -62,7 +62,7 @@ FORM = """
     </head>
     <body style="font-size: 50">
         <form action="/pasteit" method="POST">
-            <textarea name="content" class="content"></textarea>
+            <textarea name="content" rows="20" class="content"></textarea>
             <a href="javascript:document.forms[0].submit()" class="button">Paste</a>
         </form>
     </body>
@@ -101,7 +101,7 @@ class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         self.init_params()
 
-        if self.path != URL_DATA_FOLDER:
+        if self.path not in ["/favicon.ico", URL_DATA_FOLDER]:
             self.log_request()
             self.send_response(200)
             self.send_header("Content-Type", "text/html;charset=UTF-8")
