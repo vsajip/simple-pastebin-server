@@ -28,8 +28,6 @@ FORM = """
 <html class="html">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cantarell">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Reenie+Beanie">
         <link rel="stylesheet" type="text/css" href="%(CONTEXT_PATH)s/style.css">
     </head>
     <body style="font-size: 50">
@@ -45,7 +43,6 @@ CONTENT_TEMPLATE = """
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono">
         <link rel="stylesheet" type="text/css" href="http://shjs.sourceforge.net/sh_style.css">
         <link rel="stylesheet" type="text/css" href="%(CONTEXT_PATH)s/style.css">
 
@@ -55,15 +52,16 @@ CONTENT_TEMPLATE = """
     <body onload="sh_highlightDocument();">
         <div id="ul_parent">
             <ul id="lang_list_%(LANG)s">
-                <li><a class="lang_java" href="%(CONTEXT_PATH)s/java/%(PASTEBIN_FILE_NAME)s">java</a></li>
-                <li><a class="lang_python" href="%(CONTEXT_PATH)s/python/%(PASTEBIN_FILE_NAME)s">python</a></li>
-                <li><a class="lang_javascript" class="" href="%(CONTEXT_PATH)s/javascript/%(PASTEBIN_FILE_NAME)s">javascript</a></li>
-                <li><a class="lang_css" href="%(CONTEXT_PATH)s/css/%(PASTEBIN_FILE_NAME)s">css</a></li>
-                <li><a class="lang_html" href="%(CONTEXT_PATH)s/html/%(PASTEBIN_FILE_NAME)s">html</a></li>
-                <li><a class="lang_cpp" href="%(CONTEXT_PATH)s/cpp/%(PASTEBIN_FILE_NAME)s">cpp</a></li>
-                <li><a class="plain" href="%(CONTEXT_PATH)s/plain/%(PASTEBIN_FILE_NAME)s">plain</a></li>
+                <li><a class="lang_java" href="%(CONTEXT_PATH)s/java/%(PASTEBIN_FILE_NAME)s">Java</a></li>
+                <li><a class="lang_python" href="%(CONTEXT_PATH)s/python/%(PASTEBIN_FILE_NAME)s">Python</a></li>
+                <li><a class="lang_javascript" class="" href="%(CONTEXT_PATH)s/javascript/%(PASTEBIN_FILE_NAME)s">Javascript</a></li>
+                <li><a class="lang_css" href="%(CONTEXT_PATH)s/css/%(PASTEBIN_FILE_NAME)s">Css</a></li>
+                <li><a class="lang_html" href="%(CONTEXT_PATH)s/html/%(PASTEBIN_FILE_NAME)s">Html</a></li>
+                <li><a class="lang_cpp" href="%(CONTEXT_PATH)s/cpp/%(PASTEBIN_FILE_NAME)s">Cpp</a></li>
+                <li><a class="plain" href="%(CONTEXT_PATH)s/plain/%(PASTEBIN_FILE_NAME)s">Plain</a></li>
             </ul>
         </div>
+        <br style="clear: both" />
 	    <pre class="sh_%(LANG)s">%(CONTENT)s</pre>
     </body>
 </html>
@@ -74,30 +72,23 @@ STYLE_CSS = """
     background: url(http://emotionslive.co.uk/img/shadow.jpg) repeat;
 }
 body {
-  font-family: 'Cantarell', serif;
-  font-size: 48px;
+  font-family: arial,sans-serif;
+  font-size: 13px;
   text-shadow: 4px 4px 4px #aaa;
 }
 textarea {
       font-family: 'Cantarell', serif;
       font-size: 16px;
 }
-a {
-   text-decoration: none;
-}
-a:hover {
-}
 ul {
+    border: 1px solid #C9D7F1
     display: block;
-    font-family: 'Cantarell', serif;
-    font-size: 20px;
     text-shadow: none;
-    border: 1px solid dotted;
-    height: 100px;
-    width: 80%;
-    margin-top: 2%;
-    margin-left: 2%;
+    height: 25px;
+    margin-top: -10px;
+    margin-left: -50px;
     position: relative;
+    float: left;
 }
 li {
     display: inline;
@@ -105,11 +96,14 @@ li {
 }
 
 pre {
-    font-family: 'Cantarell', serif;
+    font-family: 'Courier New';
     font-size: 16px;
     text-shadow: none;
     background-color: white;
-    margin-left: 5%;
+    margin-left: 5px;
+    padding: 5px;
+    border: 1px solid #C9D7F1;
+    margin-top: -5px;
 }
 .content {
     width: 80%;
