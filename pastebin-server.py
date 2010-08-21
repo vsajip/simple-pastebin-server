@@ -50,18 +50,18 @@ CONTENT_TEMPLATE = """
         <script type="text/javascript" src="http://shjs.sourceforge.net/lang/sh_%(LANG)s.js"></script>
     </head>
     <body onload="sh_highlightDocument();">
-        <div id="ul_parent">
-            <ul id="lang_list_%(LANG)s">
-                <li><a class="lang_java" href="%(CONTEXT_PATH)s/java/%(PASTEBIN_FILE_NAME)s">Java</a></li>
-                <li><a class="lang_python" href="%(CONTEXT_PATH)s/python/%(PASTEBIN_FILE_NAME)s">Python</a></li>
-                <li><a class="lang_javascript" class="" href="%(CONTEXT_PATH)s/javascript/%(PASTEBIN_FILE_NAME)s">Javascript</a></li>
-                <li><a class="lang_css" href="%(CONTEXT_PATH)s/css/%(PASTEBIN_FILE_NAME)s">Css</a></li>
-                <li><a class="lang_html" href="%(CONTEXT_PATH)s/html/%(PASTEBIN_FILE_NAME)s">Html</a></li>
-                <li><a class="lang_cpp" href="%(CONTEXT_PATH)s/cpp/%(PASTEBIN_FILE_NAME)s">Cpp</a></li>
-                <li><a class="plain" href="%(CONTEXT_PATH)s/plain/%(PASTEBIN_FILE_NAME)s">Plain</a></li>
-            </ul>
-        </div>
-        <br style="clear: both" />
+        <ul id="lang_list_%(LANG)s">
+            <li><a class="lang_java" href="%(CONTEXT_PATH)s/java/%(PASTEBIN_FILE_NAME)s">Java</a></li>
+            <li><a class="lang_python" href="%(CONTEXT_PATH)s/python/%(PASTEBIN_FILE_NAME)s">Python</a></li>
+            <li><a class="lang_sql" href="%(CONTEXT_PATH)s/sql/%(PASTEBIN_FILE_NAME)s">Sql</a></li>
+            <li><a class="lang_javascript" class="" href="%(CONTEXT_PATH)s/javascript/%(PASTEBIN_FILE_NAME)s">Javascript</a></li>
+            <li><a class="lang_css" href="%(CONTEXT_PATH)s/css/%(PASTEBIN_FILE_NAME)s">Css</a></li>
+            <li><a class="lang_html" href="%(CONTEXT_PATH)s/html/%(PASTEBIN_FILE_NAME)s">Html</a></li>
+            <li><a class="lang_cpp" href="%(CONTEXT_PATH)s/cpp/%(PASTEBIN_FILE_NAME)s">Cpp</a></li>
+            <li><a class="plain" href="%(CONTEXT_PATH)s/plain/%(PASTEBIN_FILE_NAME)s">Plain</a></li>
+            <li><a class="last" href="%(CONTEXT_PATH)s/">More Paste</a></li>
+        </ul>
+        <br style="clear: both"/>
 	    <pre class="sh_%(LANG)s">%(CONTENT)s</pre>
     </body>
 </html>
@@ -69,7 +69,8 @@ CONTENT_TEMPLATE = """
 
 STYLE_CSS = """
 .html {
-    background: url(http://emotionslive.co.uk/img/shadow.jpg) repeat;
+    background-color: #C9D7F1;
+    #background: url(http://emotionslive.co.uk/img/shadow.jpg) repeat;
 }
 body {
   font-family: arial,sans-serif;
@@ -81,18 +82,20 @@ textarea {
       font-size: 16px;
 }
 ul {
-    border: 1px solid #C9D7F1
     display: block;
     text-shadow: none;
     height: 25px;
-    margin-top: -10px;
-    margin-left: -50px;
+    margin: 0 0 0 -40;
     position: relative;
     float: left;
 }
 li {
     display: inline;
     margin-left: 5px;
+}
+
+li .last {
+    margin-left: 30px;
 }
 
 pre {
@@ -113,6 +116,7 @@ pre {
     display: block;
     background-color:#eef;
     border: solid 1px dotted;
+    font-family: 'Courier New';
 }
 
 .button {
@@ -128,24 +132,13 @@ pre {
     position: absolute;
 }
 
-#lang_list_java .lang_java {
-    font-weight: bold;
-}
-#lang_list_python .lang_python {
-    font-weight: bold;
-}
-#lang_list_javascript .lang_javascript {
-    font-weight: bold;
-}
-#lang_list_html .lang_html {
-    font-weight: bold;
-}
-#lang_list_css .lang_css {
-    font-weight: bold;
-}
-#lang_list_cpp .lang_cpp {
-    font-weight: bold;
-}
+#lang_list_java .lang_java,
+#lang_list_python .lang_python,
+#lang_list_javascript .lang_javascript,
+#lang_list_html .lang_html,
+#lang_list_css .lang_css,
+#lang_list_cpp .lang_cpp,
+#lang_list_sql .lang_sql,
 #lang_list_plain .lang_plain {
     font-weight: bold;
 }
