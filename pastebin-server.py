@@ -22,7 +22,7 @@ import cgi
 
 
 # the port to listen on
-HTTP_PORT = 80
+HTTP_PORT = 8000
 
 FORM = """
 <html class="html">
@@ -69,8 +69,6 @@ CONTENT_TEMPLATE = """
 
 STYLE_CSS = """
 .html {
-    background-color: #C9D7F1;
-    #background: url(http://emotionslive.co.uk/img/shadow.jpg) repeat;
 }
 body {
   font-family: arial,sans-serif;
@@ -114,9 +112,8 @@ pre {
     margin-left: 10%;
     margin-top: 1%;
     display: block;
-    background-color:#eef;
-    border: solid 1px dotted;
-    font-family: 'Courier New';
+    border: 3px solid #000
+    font-family: 'Courier New', Arial;
 }
 
 .button {
@@ -124,8 +121,8 @@ pre {
     width:100px;
     height:50px;
     margin-left:45%;
-    font-family: 'Reenie Beanie';
     font-weight: bold;
+    text-decoration: none;
 }
 
 .ul_parent {
