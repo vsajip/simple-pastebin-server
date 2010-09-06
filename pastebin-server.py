@@ -4,7 +4,7 @@
 #
 # Author: xumingming64398966
 # License: GPL
-# Version: 0.1
+# Version: 0.2
 # Homepage: http://code.google.com/p/simple-pastebin-server/
 #
 # How to run:
